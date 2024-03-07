@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1892],{94069:function(n,_,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/plans",function(){return u(15056)}])}},function(n){n.O(0,[674,1664,9993,6385,7184,3457,360,6181,1941,4184,5056,9774,2888,179],function(){return n(n.s=94069)}),_N_E=n.O()}]);
