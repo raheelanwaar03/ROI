@@ -15,6 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('phone');
+            $table->decimal('balance', 10, 5)->default(0);
+            $table->string('referral');
+            $table->string('status');
+            $table->string('role');
+            $table->string('register_id');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
