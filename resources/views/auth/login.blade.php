@@ -48,7 +48,8 @@
                                 <span class="ml-auto"><a href="#">Forgot Password ?</a></span>
                             </div>
                             <button class="base-btn1" type="submit">Log In</button>
-                            <p class="reg-text text-center mb-0">Don't have an account? <a href="signup.html">Register
+                            <p class="reg-text text-center mb-0">Don't have an account? <a
+                                    href="{{ route('register') }}">Register
                                     Now</a></p>
                         </form>
                     </div>

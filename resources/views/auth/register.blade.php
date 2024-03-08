@@ -39,20 +39,20 @@
                             </p>
                         </div>
                         <form class="form-group mb-0" action="{{ route('register') }}" method="POST">
-                            <input class="form-control" type="text" name="name" placeholder="User Name">
-                            <input class="form-control" type="text" name="email" placeholder="User Email">
-                            <input class="form-control" type="text" name="phone" placeholder="User Phone">
-                            <input class="form-control" type="password" name="password" placeholder="Password">
-                            <input class="form-control" type="password" name="password_confirmation"
+                            <input class="form-control" type="text" name="name" required placeholder="User Name">
+                            <input class="form-control" type="text" name="email" required placeholder="User Email">
+                            <input class="form-control" type="text" name="phone" required placeholder="User Phone">
+                            <input class="form-control" type="password" name="password" required placeholder="Password">
+                            <input class="form-control" type="password" name="password_confirmation" required
                                 placeholder="Confirm Password">
                             <div class="custom-control custom-checkbox  d-flex">
-                                <input type="checkbox" class="custom-control-input" id="remember">
-                                <label class="custom-control-label ml-2" for="remember">Remember Me</label>
-                                <span class="ml-auto"><a href="forgot-pass.html">Forgot Password ?</a></span>
+                                <input type="checkbox" required class="custom-control-input" id="remember">
+                                <label class="custom-control-label ml-2" for="remember">I agree to the <a
+                                        href="#">terms and conditions</a> </label>
                             </div>
-                            <button class="base-btn1" type="submit">Log In</button>
-                            <p class="reg-text text-center mb-0">Don't have an account? <a href="signup.html">Register
-                                    Now</a></p>
+                            <button class="base-btn1" type="submit">Create Account</button>
+                            <p class="reg-text text-center mb-0">Already have an acocunt? <a href="{{ route('login') }}">LogIn</a>
+                            </p>
                         </form>
                     </div>
                 </div>
