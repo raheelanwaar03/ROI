@@ -41,7 +41,8 @@
                         <a class="navbar-brand" href="{{ route('LandingPage') }}">
                             <img src="{{ asset('assets/images/logo.png') }}" alt="">
                         </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
+                            aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse fixed-height" id="main_menu">
@@ -52,42 +53,17 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.html">About
+                                    <a class="nav-link" href="{{ route('LandingPage.About') }}">About
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="investment.html">Investment
+                                    <a class="nav-link" href="{{ route('LandingPage.Plans') }}">Investment
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>
-                                {{-- <li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#blog-section" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Pages
-										<div class="mr-hover-effect"></div>
-									</a>
-									<div class="dropdown-menu">
-                                            <a class="dropdown-item" href="team.html">Investors</a>
-                                            <a class="dropdown-item" href="faq.html">Faq</a>
-                                            <a class="dropdown-item" href="signin.html">Login</a>
-                                            <a class="dropdown-item" href="signup.html">Register</a>
-                                            <a class="dropdown-item" href="forgot-pass.html">Forgot Password</a>
-                                            <a class="dropdown-item" href="404.html">404</a>
-									</div>
-								</li>
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#blog-section" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Blog
-										<div class="mr-hover-effect"></div>
-									</a>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="blog.html">Blog Grid</a>
-										<a class="dropdown-item" href="blog-with-sidebar.html">Blog With Sidebar</a>
-										<a class="dropdown-item" href="blog-details.html">Blog Details</a>
-									</div>
-								</li> --}}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact
+                                    <a class="nav-link" href="{{ route('LandingPage.Contact') }}">Contact
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>

@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[LandingPageController::class,'index'])->name('LandingPage');
+Route::get('/Plans',[LandingPageController::class,'plans'])->name('LandingPage.Plans');
+Route::get('/Contact',[LandingPageController::class,'contact'])->name('LandingPage.Contact');
+Route::get('/About',[LandingPageController::class,'about'])->name('LandingPage.About');
 
 
 Route::get('/dashboard', function () {
@@ -29,3 +32,5 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/user.php';
+require __DIR__.'/admin.php';
