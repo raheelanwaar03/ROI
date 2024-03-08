@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone');
             $table->decimal('balance', 10, 5)->default(0);
-            $table->string('referral');
-            $table->string('status');
-            $table->string('role');
-            $table->string('register_id');
+            $table->string('referral')->default('default');
+            $table->string('status')->default('pending');
+            $table->string('role')->default('user');
+            $table->string('register_id')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
