@@ -24,6 +24,9 @@
 </head>
 
 <body>
+
+    <x-alert />
+
     <!-- preloader area start -->
     <div class="preloader" id="preloader">
         <div class="loader loader-1">

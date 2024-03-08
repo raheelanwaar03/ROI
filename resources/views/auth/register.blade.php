@@ -39,9 +39,10 @@
                             </p>
                         </div>
                         <form class="form-group mb-0" action="{{ route('register') }}" method="POST">
+                            @csrf
                             <input class="form-control" type="text" name="name" required placeholder="User Name">
                             <input class="form-control" type="text" name="email" required placeholder="User Email">
-                            <input class="form-control" type="text" name="phone" required placeholder="User Phone">
+                            <input class="form-control" type="number" name="phone" required placeholder="User Phone">
                             <input class="form-control" type="password" name="password" required placeholder="Password">
                             <input class="form-control" type="password" name="password_confirmation" required
                                 placeholder="Confirm Password">
