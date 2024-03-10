@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Biniog - HYIP & Financial Investment Template </title>
+    <title> {{ env('APP_NAME') }} - Your finance advisor </title>
     <!-- favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" type="image/x-icon">
     <!-- bootstrap -->
@@ -51,27 +51,37 @@
                         <div class="collapse navbar-collapse fixed-height" id="main_menu">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="{{ route('LandingPage') }}">Home
+                                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
+                                        href="{{ route('LandingPage') }}">Home
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('LandingPage.About') }}">About
+                                    <a class="nav-link {{ request()->is('About') ? 'active' : '' }}"
+                                        href="{{ route('LandingPage.About') }}">About
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('LandingPage.Plans') }}">Investment
+                                    <a class="nav-link {{ request()->is('Plans') ? 'active' : '' }}"
+                                        href="{{ route('LandingPage.Plans') }}">Investment
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('LandingPage.Contact') }}">Contact
+                                    <a class="nav-link {{ request()->is('Contact') ? 'active' : '' }}"
+                                        href="{{ route('LandingPage.Contact') }}">Contact
                                         <div class="mr-hover-effect"></div>
                                     </a>
                                 </li>
                             </ul>
-                            <a href="{{ route('login') }}" class="base-btn2"> Login</a>
+
+                            @if (auth()->user())
+                                <a href="{{ route('User.Dashboard') }}" class="base-btn2">Dashboard</a>
+                            @else
+                                <a href="{{ route('login') }}" class="base-btn2">Login</a>
+                            @endif
+
                         </div>
                     </nav>
                 </div>
