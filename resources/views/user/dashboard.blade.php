@@ -13,21 +13,21 @@
 	<meta name="description" content="Dolab : Dolab Personal Banking Admin Bootstrap 5 Template">
 	<meta property="og:title" content="Dolab : Dolab Personal Banking Admin Bootstrap 5 Template">
 	<meta property="og:description" content="Dolab : Dolab Personal Banking Admin Bootstrap 5 Template">
-	<meta property="og:image" content="social-image.png">
+	<meta property="og:image" content="social-image.png') }}">
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
 	<title>Dolab Personal Banking Admin</title>
 
 	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
-	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
-	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-	<link href="vendor/jquery-autocomplete/jquery-ui.css" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="{{ asset('asset/images/favicon.png') }}">
+	<link href="{{ asset('asset/vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
+	<link href="{{ asset('asset/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('asset/vendor/jquery-autocomplete/jquery-ui.css') }}" rel="stylesheet">
 
 	<!-- Style css -->
 
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -160,7 +160,7 @@
 									<li class="active dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -172,7 +172,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/2.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -184,7 +184,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/3.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -196,7 +196,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/4.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/4.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -209,7 +209,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/5.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -221,7 +221,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -233,7 +233,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/2.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -246,7 +246,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/3.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -258,7 +258,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/4.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/4.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -271,7 +271,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/5.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -283,7 +283,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -295,7 +295,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/2.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -307,7 +307,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/3.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon"></span>
 											</div>
 											<div class="user_info">
@@ -320,7 +320,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/4.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/4.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -332,7 +332,7 @@
 									<li class="dz-chat-user">
 										<div class="d-flex bd-highlight">
 											<div class="img_cont">
-												<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt="">
+												<img src="{{ asset('asset/images/avatar/5.jpg') }}" class="rounded-circle user_img" alt="">
 												<span class="online_icon offline"></span>
 											</div>
 											<div class="user_info">
@@ -366,7 +366,7 @@
 							<div class="card-body msg_card_body dz-scroll" id="DLAB_W_Contacts_Body3">
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										Hi, how are you samim?
@@ -379,12 +379,12 @@
 										<span class="msg_time_send">8:55 AM, Today</span>
 									</div>
 									<div class="img_cont_msg">
-								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="">
+								<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										I am good too, thank you for your chat template
@@ -397,12 +397,12 @@
 										<span class="msg_time_send">9:05 AM, Today</span>
 									</div>
 									<div class="img_cont_msg">
-								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="">
+								<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										I am looking for your next templates
@@ -415,12 +415,12 @@
 										<span class="msg_time_send">9:10 AM, Today</span>
 									</div>
 									<div class="img_cont_msg">
-										<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										Bye, see you
@@ -429,7 +429,7 @@
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										Hi, how are you samim?
@@ -442,12 +442,12 @@
 										<span class="msg_time_send">8:55 AM, Today</span>
 									</div>
 									<div class="img_cont_msg">
-								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="">
+								<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										I am good too, thank you for your chat template
@@ -460,12 +460,12 @@
 										<span class="msg_time_send">9:05 AM, Today</span>
 									</div>
 									<div class="img_cont_msg">
-								<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="">
+								<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										I am looking for your next templates
@@ -478,12 +478,12 @@
 										<span class="msg_time_send">9:10 AM, Today</span>
 									</div>
 									<div class="img_cont_msg">
-										<img src="images/avatar/2.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/2.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 								</div>
 								<div class="d-flex justify-content-start mb-4">
 									<div class="img_cont_msg">
-										<img src="images/avatar/1.jpg" class="rounded-circle user_img_msg" alt="">
+										<img src="{{ asset('asset/images/avatar/1.jpg') }}" class="rounded-circle user_img_msg" alt="">
 									</div>
 									<div class="msg_cotainer">
 										Bye, see you
@@ -672,7 +672,7 @@
 												<li>
 													<div class="timeline-panel">
 														<div class="media me-2">
-															<img alt="image" width="50" src="images/avatar/1.jpg">
+															<img alt="image" width="50" src="{{ asset('asset/images/avatar/1.jpg') }}">
 														</div>
 														<div class="media-body">
 															<h6 class="mb-1"><a href="javascript:voiud(0)"> Dr sultads Send you Photo</a></h6>
@@ -705,7 +705,7 @@
 												 <li>
 													<div class="timeline-panel">
 														<div class="media me-2">
-															<img alt="image" width="50" src="images/avatar/1.jpg">
+															<img alt="image" width="50" src="{{ asset('asset/images/avatar/1.jpg') }}">
 														</div>
 														<div class="media-body">
 															<h6 class="mb-1"><a href="javascript:voiud(0)">Dr sultads Send you Photo</a></h6>
@@ -815,7 +815,7 @@
 							</ul>
 							<a class="nav-link user-profile" href="javascript:void(0);"  role="button" data-bs-toggle="dropdown">
 								<div class="header-info2 d-flex align-items-center">
-									<img src="images/placeholder.jpg" alt="">
+									<img src="{{ asset('asset/images/placeholder.jpg') }}" alt="">
 									<div class="d-flex align-items-center sidebar-info">
 										<div class="user-info">
 											<span class="font-w500 d-block  fs-5 text-white">Adam Joe</span>
@@ -1498,7 +1498,7 @@
 										<div class="card-body loadmore-content dz-scroll recent-activity-wrapper px-3  py-3" id="RecentActivityContent">
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic1.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic1.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Dedi Cahyadi</a></h6>
@@ -1515,7 +1515,7 @@
 											</div>
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic2.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic2.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Evans John</a></h6>
@@ -1532,7 +1532,7 @@
 											</div>
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic3.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic3.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Brian Brandon</a></h6>
@@ -1549,7 +1549,7 @@
 											</div>
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic4.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic4.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Bella Brownlee</a></h6>
@@ -1566,7 +1566,7 @@
 											</div>
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic5.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic5.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Chynthia Lawra</a></h6>
@@ -1583,7 +1583,7 @@
 											</div>
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic6.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic6.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Dedi Cahyadi</a></h6>
@@ -1600,7 +1600,7 @@
 											</div>
 											<div class="d-flex py-sm-3 py-1 px-3 align-items-center student">
 												<span class="me-3 me-lg-2">
-													<img src="images/profile/small/pic4.jpg" alt="" width="50">
+													<img src="{{ asset('asset/images/profile/small/pic4.jpg') }}" alt="" width="50">
 												</span>
 												<div class="ms-2">
 													<h6 class="font-w500 fs-16 mb-0"><a href="app-profile.html">Bella Brownlee</a></h6>
@@ -1689,23 +1689,23 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
-	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
-	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('asset/vendor/global/global.min.js') }}"></script>
+	<script src="{{ asset('asset/vendor/chart.js/Chart.bundle.min.js') }}"></script>
+	<script src="{{ asset('asset/vendor/jquery-nice-select/asset/js/jquery.nice-select.min.js') }}"></script>
 	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
+	<script src="{{ asset('asset/vendor/apexchart/apexchart.js') }}"></script>
 	<!-- Chart piety plugin files -->
-    <script src="vendor/peity/jquery.peity.min.js"></script>
+    <script src="{{ asset('asset/vendor/peity/jquery.peity.min.js') }}"></script>
 	<!-- Chartist -->
-   <script src="vendor/chartist/js/chartist.min.js"></script>
-   <script src="vendor/jquery-autocomplete/jquery-ui.js"></script>
-	<!-- <script src="./js/dashboard/dashboard-2.js"></script> -->
+   <script src="{{ asset('asset/vendor/chartist/js/chartist.min.js') }}"></script>
+   <script src="{{ asset('asset/vendor/jquery-autocomplete/jquery-ui.js') }}"></script>
+	<!-- <script src="./{{ asset('asset/js/dashboard/dashboard-2.js') }}"></script> -->
 	<!-- Dashboard 1 -->
-	<script src="js/dashboard/dashboard-1.js"></script>
-	<script src="js/custom.min.js"></script>
-	<script src="js/dlabnav-init.js"></script>
-	<script src="js/demo.js"></script>
-    <script src="js/styleSwitcher.js"></script>
+	<script src="{{ asset('asset/js/dashboard/dashboard-1.js') }}"></script>
+	<script src="{{ asset('asset/js/custom.min.js') }}"></script>
+	<script src="{{ asset('asset/js/dlabnav-init.js') }}"></script>
+	<script src="{{ asset('asset/js/demo.js') }}"></script>
+    <script src="{{ asset('asset/js/styleSwitcher.js') }}"></script>
 
 </body>
 </html>
