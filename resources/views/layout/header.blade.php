@@ -137,7 +137,7 @@
                             <a class="nav-link user-profile" href="javascript:void(0);" role="button"
                                 data-bs-toggle="dropdown">
                                 <div class="header-info2 d-flex align-items-center">
-                                    <img src="{{ asset('asset/images/placeholder.jpg') }}" alt="">
+                                    <img src="{{ asset('asset/images/profile/profile.png') }}" alt="">
                                     <div class="d-flex align-items-center sidebar-info">
                                         <div class="user-info">
                                             <span class="font-w500 d-block  fs-5 text-white">Adam Joe</span>
@@ -153,7 +153,7 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu profile dropdown-menu-end">
-                                <a href="{{ route('profile.edit') }}}" class="dropdown-item ai-icon ">
+                                <a href="{{ route('profile.edit') }}" class="dropdown-item ai-icon ">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18"
                                         height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -240,7 +240,6 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('User.Deposit.Request') }}">Request</a></li>
-                            <li><a href="{{ route('profile.edit') }}">Profile</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
