@@ -150,7 +150,6 @@
                                         </svg>
 
                                     </div>
-
                                 </div>
                             </a>
                             <div class="dropdown-menu profile dropdown-menu-end">
@@ -241,6 +240,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('User.Deposit.Request') }}">Request</a></li>
+                            <li><a href="{{ route('profile.edit') }}">Profile</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
