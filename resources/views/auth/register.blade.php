@@ -43,16 +43,27 @@
                             <input class="form-control" type="text" name="name" required placeholder="User Name">
                             <input class="form-control" type="text" name="email" required placeholder="User Email">
                             <input class="form-control" type="number" name="phone" required placeholder="User Phone">
-                            <input class="form-control" type="password" name="password" required placeholder="Password">
-                            <input class="form-control" type="password" name="password_confirmation" required
-                                placeholder="Confirm Password">
+                            <div class="d-flex">
+                                <input class="form-control" type="password" id="password" name="password" required
+                                    placeholder="Password">
+                                <i class="fas fa-eye" style="margin-left: -30px;margin-top:15px;"
+                                    onclick="togglePasswordVisibility('password', 'togglePasswordIcon')"></i>
+                            </div>
+                            <div class="d-flex">
+                                <input class="form-control" type="password" id="confirmPassword"
+                                    name="password_confirmation" required placeholder="Confirm Password">
+                                <i class="fas fa-eye" style="margin-left: -30px;margin-top:15px;"
+                                    onclick="togglePasswordVisibility('confirmPassword', 'toggleConfirmPasswordIcon')">
+                                </i>
+                            </div>
                             <div class="custom-control custom-checkbox  d-flex">
                                 <input type="checkbox" required class="custom-control-input" id="remember">
                                 <label class="custom-control-label ml-2" for="remember">I agree to the <a
                                         href="#">terms and conditions</a> </label>
                             </div>
                             <button class="base-btn1" type="submit">Create Account</button>
-                            <p class="reg-text text-center mb-0">Already have an acocunt? <a href="{{ route('login') }}">LogIn</a>
+                            <p class="reg-text text-center mb-0">Already have an acocunt? <a
+                                    href="{{ route('login') }}">LogIn</a>
                             </p>
                         </form>
                     </div>
@@ -60,4 +71,26 @@
             </div>
         </div>
     </section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function togglePasswordVisibility(inputId, iconId) {
+            var input = document.getElementById(inputId);
+            var icon = document.getElementById(iconId);
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
+    <style>
+        .fa {
+            cursor: pointer;
+        }
+    </style>
 @endsection

@@ -40,12 +40,17 @@
                         </div>
                         <form class="form-group mb-0" action="{{ route('login') }}" method="POST">
                             @csrf
-                            <input class="form-control" type="text" name="yourname" placeholder="User Name">
-                            <input class="form-control" type="password" name="password" placeholder="Password">
+                            <input class="form-control" type="text" name="email" placeholder="User Email">
+                            <div class="d-flex align-items-center">
+                                <input class="form-control" type="password" id="password" name="password"
+                                    placeholder="Password">
+                                <i class="fas fa-eye" style="margin-left: -30px;margin-top:-12px;"
+                                    onclick="togglePasswordVisibility('password', 'togglePasswordIcon')"></i>
+                            </div>
                             <div class="custom-control custom-checkbox  d-flex">
                                 <input type="checkbox" name="remember" class="custom-control-input" id="remember">
                                 <label class="custom-control-label ml-2" for="remember">Remember Me</label>
-                                <span class="ml-auto"><a href="#">Forgot Password ?</a></span>
+                                <span class="ml-auto"><a href="{{ route('password.request') }}">Forgot Password ?</a></span>
                             </div>
                             <button class="base-btn1" type="submit">Log In</button>
                             <p class="reg-text text-center mb-0">Don't have an account? <a
@@ -57,4 +62,21 @@
             </div>
         </div>
     </section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function togglePasswordVisibility(inputId, iconId) {
+            var input = document.getElementById(inputId);
+            var icon = document.getElementById(iconId);
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
 @endsection
