@@ -134,143 +134,198 @@
                                                 </div>
                                                 <div class="row mb-2">
                                                     <div class="col-sm-3 col-5">
-                                                        <h5 class="f-w-500">KYC <span class="pull-end">:</span>
-                                                        </h5>
+                                                        @if ($user->Verification->status == 'none')
+                                                            <h5 class="f-w-500">KYC <span class="pull-end">:</span>
+                                                            </h5>
                                                     </div>
-                                                    <div class="col-sm-9 col-7"><span>NA</span>
+                                                    <div class="col-sm-9 col-7"><span
+                                                            class="badge light badge-danger">None</span>
                                                     </div>
+                                                @else
+                                                    <h5 class="f-w-500">KYC <span class="pull-end">:</span>
+                                                    </h5>
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-sm-3 col-5">
-                                                        <h5 class="f-w-500">Member From <span class="pull-end">:</span>
-                                                        </h5>
-                                                    </div>
-                                                    <div class="col-sm-9 col-7">
-                                                        <span>{{ auth()->user()->created_at }}</span>
-                                                    </div>
+                                                <div class="col-sm-9 col-7"><span
+                                                        class="badge light badge-info">{{ $user->Verification->status }}</span>
+                                                </div>
+                                                @endif
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-sm-3 col-5">
+                                                    <h5 class="f-w-500">Member From <span class="pull-end">:</span>
+                                                    </h5>
+                                                </div>
+                                                <div class="col-sm-9 col-7">
+                                                    <span>{{ auth()->user()->created_at }}</span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div id="settings" class="tab-pane fade">
-                                            <div class="pt-3">
-                                                <div class="settings-form">
-                                                    <h4 class="text-primary text-center">Account Setting</h4>
-                                                    <form method="post" action="{{ route('profile.update') }}">
-                                                        @csrf
-                                                        @method('patch')
-                                                        <div class="row">
-                                                            <x-input-error class="mt-2" :messages="$errors->get('name')" />
-                                                            <div class="mb-3 col-md-6">
-                                                                <label class="form-label">Name</label>
-                                                                <input type="text" name="name"
-                                                                    value="{{ auth()->user()->name }}" autofocus
-                                                                    class="form-control">
-                                                            </div>
-                                                            <div class="mb-3 col-md-6">
-                                                                <label class="form-label">Email</label>
-                                                                <input readonly name="email" type="email"
-                                                                    value="{{ auth()->user()->email }}"
-                                                                    class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mt-2">
-                                                            <button type="submit"
-                                                                class="btn btn-sm btn-info">Update</button>
-                                                            @if (session('status') === 'profile-updated')
-                                                                <p x-data="{ show: true }" x-show="show" x-transition
-                                                                    x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600">
-                                                                    {{ __('Saved.') }}</p>
-                                                            @endif
-                                                        </div>
-                                                    </form>
-                                                    <div class="m-3">
-                                                        <h4 class="text-primary text-center">Change Password</h4>
-                                                    </div>
-                                                    <form action="{{ route('password.update') }}" method="POST">
-                                                        @csrf
-                                                        @method('put')
+                                    </div>
+                                    <div id="settings" class="tab-pane fade">
+                                        <div class="pt-3">
+                                            <div class="settings-form">
+                                                <h4 class="text-primary text-center">Account Setting</h4>
+                                                <form method="post" action="{{ route('profile.update') }}">
+                                                    @csrf
+                                                    @method('patch')
+                                                    <div class="row">
+                                                        <x-input-error class="mt-2" :messages="$errors->get('name')" />
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label">Current Password</label>
-                                                            <input type="password" name="current_password"
-                                                                placeholder="Password" class="form-control">
-                                                        </div>
-                                                        <div class="mb-3 col-md-6">
-                                                            <label class="form-label">New Password</label>
-                                                            <input type="password" name="password" placeholder="New Password"
+                                                            <label class="form-label">Name</label>
+                                                            <input type="text" name="name"
+                                                                value="{{ auth()->user()->name }}" autofocus
                                                                 class="form-control">
                                                         </div>
                                                         <div class="mb-3 col-md-6">
-                                                            <label class="form-label">Confirm Password</label>
-                                                            <input type="password" name="password_confirmation"
-                                                                placeholder="Confirm Password" class="form-control">
+                                                            <label class="form-label">Email</label>
+                                                            <input readonly name="email" type="email"
+                                                                value="{{ auth()->user()->email }}" class="form-control">
                                                         </div>
-                                                        <button class="btn btn-primary btn-sm"
-                                                            type="submit">Change</button>
-                                                    </form>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <button type="submit" class="btn btn-sm btn-info">Update</button>
+                                                        @if (session('status') === 'profile-updated')
+                                                            <p x-data="{ show: true }" x-show="show" x-transition
+                                                                x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600">
+                                                                {{ __('Saved.') }}</p>
+                                                        @endif
+                                                    </div>
+                                                </form>
+                                                <div class="m-3">
+                                                    <h4 class="text-primary text-center">Change Password</h4>
                                                 </div>
+                                                <form action="{{ route('password.update') }}" method="POST">
+                                                    @csrf
+                                                    @method('put')
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label">Current Password</label>
+                                                        <input type="password" name="current_password"
+                                                            placeholder="Password" class="form-control">
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label">New Password</label>
+                                                        <input type="password" name="password" placeholder="New Password"
+                                                            class="form-control">
+                                                    </div>
+                                                    <div class="mb-3 col-md-6">
+                                                        <label class="form-label">Confirm Password</label>
+                                                        <input type="password" name="password_confirmation"
+                                                            placeholder="Confirm Password" class="form-control">
+                                                    </div>
+                                                    <button class="btn btn-primary btn-sm" type="submit">Change</button>
+                                                </form>
                                             </div>
                                         </div>
-                                        <div id="kyc" class="tab-pane fade">
-                                            <div class="pt-3">
-                                                <div class="settings-form">
-                                                    <h4 class="text-primary">Account Setting</h4>
-                                                    <form>
-                                                        <div class="row">
-                                                            <div class="mb-3 col-md-6">
-                                                                <label class="form-label">Email</label>
-                                                                <input type="email" placeholder="Email"
-                                                                    class="form-control">
-                                                            </div>
-                                                            <div class="mb-3 col-md-6">
-                                                                <label class="form-label">Password</label>
-                                                                <input type="password" placeholder="Password"
-                                                                    class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-3">
+                                    </div>
+                                    <div id="kyc" class="tab-pane fade">
+                                        <div class="pt-3">
+                                            <div class="settings-form">
+                                                <h4 class="text-primary">KYC</h4>
+                                                <form method="POST" action="{{ route('User.KYC') }}"
+                                                    enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="row">
+                                                        <div class="mb-3 col-md-6">
                                                             <label class="form-label">Address</label>
-                                                            <input type="text" placeholder="1234 Main St"
+                                                            <input type="text" required name="address"
+                                                                placeholder="1234 Main St" class="form-control">
+                                                        </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label">Country</label>
+                                                            <input list="countries" required id="country"
+                                                                name="country" class="form-control">
+                                                            <datalist id="countries">
+                                                            </datalist>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label">City</label>
+                                                            <input type="text" required name="city"
                                                                 class="form-control">
                                                         </div>
-                                                        <div class="mb-3">
-                                                            <label class="form-label">Address 2</label>
-                                                            <input type="text"
-                                                                placeholder="Apartment, studio, or floor"
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label">State</label>
+                                                            <input type="text" required name="state"
+                                                                class="form-control" id="status" placeholder="State">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label">Zip</label>
+                                                            <input type="text" required name="zip"
                                                                 class="form-control">
                                                         </div>
-                                                        <div class="row">
-                                                            <div class="mb-3 col-md-6">
-                                                                <label class="form-label">City</label>
-                                                                <input type="text" class="form-control">
-                                                            </div>
-                                                            <div class="mb-3 col-md-4">
-                                                                <label class="form-label">State</label>
-                                                                <select class="form-control default-select wide"
-                                                                    id="inputState">
-                                                                    <option selected="">Choose...</option>
-                                                                    <option>Option 1</option>
-                                                                    <option>Option 2</option>
-                                                                    <option>Option 3</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="mb-3 col-md-2">
-                                                                <label class="form-label">Zip</label>
-                                                                <input type="text" class="form-control">
-                                                            </div>
+                                                        <div class="mb-3 col-md-6">
+                                                            <label class="form-label">Phone</label>
+                                                            <input type="text" required name="phone"
+                                                                placeholder="Your contact number" class="form-control">
                                                         </div>
-                                                        <div class="mb-3">
-                                                            <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="gridCheck">
-                                                                <label class="form-check-label form-label"
-                                                                    for="gridCheck">
-                                                                    Check me out</label>
-                                                            </div>
-                                                        </div>
-                                                        <button class="btn btn-primary btn-sm" type="submit">Sign
-                                                            in</button>
-                                                    </form>
-                                                </div>
+                                                    </div>
+                                                    <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+                                                </form>
+                                                {{-- country --}}
+
+                                                <script>
+                                                    // Array of countries
+                                                    var countries = [
+                                                        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
+                                                        "Australia", "Austria",
+                                                        "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+                                                        "Bhutan",
+                                                        "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+                                                        "Cabo Verde", "Cambodia",
+                                                        "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo",
+                                                        "Costa Rica",
+                                                        "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
+                                                        "Ecuador", "Egypt",
+                                                        "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland",
+                                                        "France", "Gabon",
+                                                        "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
+                                                        "Guyana",
+                                                        "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel",
+                                                        "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan",
+                                                        "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+                                                        "Madagascar",
+                                                        "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico",
+                                                        "Micronesia",
+                                                        "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+                                                        "Nepal",
+                                                        "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
+                                                        "Oman", "Pakistan",
+                                                        "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
+                                                        "Qatar",
+                                                        "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines",
+                                                        "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia",
+                                                        "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+                                                        "Somalia", "South Africa",
+                                                        "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+                                                        "Taiwan",
+                                                        "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia",
+                                                        "Turkey", "Turkmenistan",
+                                                        "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
+                                                        "Uzbekistan", "Vanuatu", "Vatican City",
+                                                        "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+                                                    ];
+
+                                                    // Populate datalist
+                                                    var datalist = document.getElementById("countries");
+                                                    countries.forEach(function(country) {
+                                                        var option = document.createElement("option");
+                                                        option.value = country;
+                                                        datalist.appendChild(option);
+                                                    });
+
+                                                    // JavaScript to handle selection from dropdown
+                                                    document.getElementById("country").addEventListener("change", function() {
+                                                        var selectedCountry = this.value;
+                                                        if (selectedCountry) {
+                                                            alert("Selected country: " + selectedCountry);
+                                                            // Here you can perform any action with the selected country
+                                                        }
+                                                    });
+                                                </script>
+
                                             </div>
                                         </div>
                                     </div>
@@ -280,31 +335,5 @@
                     </div>
                 </div>
             </div>
-        @endsection
-        {{-- <x-slot name="header">
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Profile') }}
-            </h2>
-        </x-slot>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.update-profile-information-form')
-                    </div>
-                </div>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.update-password-form')
-                    </div>
-                </div>
-
-                <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                    <div class="max-w-xl">
-                        @include('profile.partials.delete-user-form')
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        </div>
+    @endsection
