@@ -81,7 +81,6 @@
                                                 <div class="pt-4 border-bottom-1 pb-3">
                                                     <h4 class="text-primary">Company Massage</h4>
                                                     <p class="mb-2">Dear [{{ auth()->user()->name }}],
-
                                                         I am thrilled to share with you the progress and vision of [Your
                                                         Investment Company Name]. As a valued investor, your partnership has
                                                         been instrumental in propelling our journey towards financial
@@ -132,24 +131,37 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="row mb-2">
-                                                    <div class="col-sm-3 col-5">
-                                                        @if ($user->Verification->status == 'none')
+                                                @if ($user->Verification != '')
+                                                    <div class="row mb-2">
+                                                        <div class="col-sm-3 col-5">
+                                                            @if ($user->Verification->status == 'none')
+                                                                <h5 class="f-w-500">KYC <span class="pull-end">:</span>
+                                                                </h5>
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span
+                                                                class="badge light badge-danger">None</span>
+                                                        </div>
+                                                    @else
+                                                        <div class="col-sm-3 col-5">
                                                             <h5 class="f-w-500">KYC <span class="pull-end">:</span>
                                                             </h5>
-                                                    </div>
-                                                    <div class="col-sm-9 col-7"><span
-                                                            class="badge light badge-danger">None</span>
-                                                    </div>
-                                                @else
+                                                        </div>
+                                                        <div class="col-sm-9 col-7"><span
+                                                                class="badge light badge-info">{{ $user->Verification->status }}</span>
+                                                        </div>
+                                                @endif
+                                            </div>
+                                        @else
+                                            <div class="row mb-2">
+                                                <div class="col-sm-3 col-5">
                                                     <h5 class="f-w-500">KYC <span class="pull-end">:</span>
                                                     </h5>
                                                 </div>
                                                 <div class="col-sm-9 col-7"><span
-                                                        class="badge light badge-info">{{ $user->Verification->status }}</span>
+                                                        class="badge light badge-danger">None</span>
                                                 </div>
-                                                @endif
                                             </div>
+                                            @endif
                                             <div class="row mb-2">
                                                 <div class="col-sm-3 col-5">
                                                     <h5 class="f-w-500">Member From <span class="pull-end">:</span>
@@ -264,68 +276,6 @@
                                                     </div>
                                                     <button class="btn btn-primary btn-sm" type="submit">Submit</button>
                                                 </form>
-                                                {{-- country --}}
-
-                                                <script>
-                                                    // Array of countries
-                                                    var countries = [
-                                                        "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
-                                                        "Australia", "Austria",
-                                                        "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
-                                                        "Bhutan",
-                                                        "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
-                                                        "Cabo Verde", "Cambodia",
-                                                        "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo",
-                                                        "Costa Rica",
-                                                        "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
-                                                        "Ecuador", "Egypt",
-                                                        "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland",
-                                                        "France", "Gabon",
-                                                        "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
-                                                        "Guyana",
-                                                        "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel",
-                                                        "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan",
-                                                        "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
-                                                        "Madagascar",
-                                                        "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico",
-                                                        "Micronesia",
-                                                        "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
-                                                        "Nepal",
-                                                        "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
-                                                        "Oman", "Pakistan",
-                                                        "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
-                                                        "Qatar",
-                                                        "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines",
-                                                        "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia",
-                                                        "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
-                                                        "Somalia", "South Africa",
-                                                        "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
-                                                        "Taiwan",
-                                                        "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia",
-                                                        "Turkey", "Turkmenistan",
-                                                        "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
-                                                        "Uzbekistan", "Vanuatu", "Vatican City",
-                                                        "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
-                                                    ];
-
-                                                    // Populate datalist
-                                                    var datalist = document.getElementById("countries");
-                                                    countries.forEach(function(country) {
-                                                        var option = document.createElement("option");
-                                                        option.value = country;
-                                                        datalist.appendChild(option);
-                                                    });
-
-                                                    // JavaScript to handle selection from dropdown
-                                                    document.getElementById("country").addEventListener("change", function() {
-                                                        var selectedCountry = this.value;
-                                                        if (selectedCountry) {
-                                                            alert("Selected country: " + selectedCountry);
-                                                            // Here you can perform any action with the selected country
-                                                        }
-                                                    });
-                                                </script>
-
                                             </div>
                                         </div>
                                     </div>
@@ -336,4 +286,67 @@
                 </div>
             </div>
         </div>
+    @endsection
+
+
+    @section('scripts')
+        <script>
+            // Array of countries
+            var countries = [
+                "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia",
+                "Australia", "Austria",
+                "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
+                "Bhutan",
+                "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi",
+                "Cabo Verde", "Cambodia",
+                "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo",
+                "Costa Rica",
+                "Croatia", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic",
+                "Ecuador", "Egypt",
+                "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland",
+                "France", "Gabon",
+                "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau",
+                "Guyana",
+                "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel",
+                "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan",
+                "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg",
+                "Madagascar",
+                "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico",
+                "Micronesia",
+                "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+                "Nepal",
+                "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway",
+                "Oman", "Pakistan",
+                "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal",
+                "Qatar",
+                "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines",
+                "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia",
+                "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands",
+                "Somalia", "South Africa",
+                "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria",
+                "Taiwan",
+                "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia",
+                "Turkey", "Turkmenistan",
+                "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay",
+                "Uzbekistan", "Vanuatu", "Vatican City",
+                "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+            ];
+
+            // Populate datalist
+            var datalist = document.getElementById("countries");
+            countries.forEach(function(country) {
+                var option = document.createElement("option");
+                option.value = country;
+                datalist.appendChild(option);
+            });
+
+            // JavaScript to handle selection from dropdown
+            document.getElementById("country").addEventListener("change", function() {
+                var selectedCountry = this.value;
+                if (selectedCountry) {
+                    alert("Selected country: " + selectedCountry);
+                    // Here you can perform any action with the selected country
+                }
+            });
+        </script>
     @endsection

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('deposits', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
+            $table->integer('amount');
+            $table->integer('total');
+            $table->string('trx');
+            $table->string('image');
+            $table->string('status');
             $table->timestamps();
         });
     }

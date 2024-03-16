@@ -16,12 +16,6 @@ class UserDashboardController extends Controller
     public function profile_pic(Request $request)
     {
         return $request;
-        $pic = $request->profile;
-
-
-        $user = User::find(auth()->user()->id);
-        // $user->profile = ;
     }
-
 
 }
