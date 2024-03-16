@@ -24,17 +24,13 @@
 <!-- /Modal -->
 </div>
 </div>
+
+{{-- scripts --}}
+@yield('scripts')
+
 <script src="{{ asset('asset/vendor/global/global.min.js') }}"></script>
 <script src="{{ asset('asset/vendor/chart.js/Chart.bundle.min.js') }}"></script>
 <script src="{{ asset('asset/vendor/jquery-nice-select/asset/js/jquery.nice-select.min.js') }}"></script>
-<!-- Apex Chart -->
-<script src="{{ asset('asset/vendor/apexchart/apexchart.js') }}"></script>
-<!-- Chart piety plugin files -->
-<script src="{{ asset('asset/vendor/peity/jquery.peity.min.js') }}"></script>
-<!-- Chartist -->
-<script src="{{ asset('asset/vendor/chartist/js/chartist.min.js') }}"></script>
-<script src="{{ asset('asset/vendor/jquery-autocomplete/jquery-ui.js') }}"></script>
-<!-- <script src="./{{ asset('asset/js/dashboard/dashboard-2.js') }}"></script> -->
 <!-- Dashboard 1 -->
 <script src="{{ asset('asset/js/dashboard/dashboard-1.js') }}"></script>
 <script src="{{ asset('asset/js/custom.min.js') }}"></script>

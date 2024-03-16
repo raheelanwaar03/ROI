@@ -14,13 +14,15 @@
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('asset/images/favicon.png') }}">
+
+    {{-- links --}}
+    @yield('links')
+
     <link href="{{ asset('asset/vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
     <link href="{{ asset('asset/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}"
         rel="stylesheet">
     <link href="{{ asset('asset/vendor/jquery-autocomplete/jquery-ui.css') }}" rel="stylesheet">
-
     <!-- Style css -->
-
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
 
 </head>
