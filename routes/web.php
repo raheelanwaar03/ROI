@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[LandingPageController::class,'index'])->name('LandingPage');
-Route::get('/Plans',[LandingPageController::class,'plans'])->name('LandingPage.Plans');
-Route::get('/Contact',[LandingPageController::class,'contact'])->name('LandingPage.Contact');
-Route::get('/About',[LandingPageController::class,'about'])->name('LandingPage.About');
+Route::get('/', [LandingPageController::class, 'index'])->name('LandingPage');
+Route::get('/Plans', [LandingPageController::class, 'plans'])->name('LandingPage.Plans');
+Route::get('/Contact', [LandingPageController::class, 'contact'])->name('LandingPage.Contact');
+Route::get('/About', [LandingPageController::class, 'about'])->name('LandingPage.About');
 
 
 Route::get('/dashboard', function () {
@@ -26,11 +26,11 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile/del', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
-require __DIR__.'/user.php';
-require __DIR__.'/admin.php';
+require __DIR__ . '/auth.php';
+require __DIR__ . '/user.php';
+require __DIR__ . '/admin.php';

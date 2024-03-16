@@ -11,7 +11,7 @@ class UserDepositController extends Controller
     public function index()
     {
         $deposit = Deposit::where('user_id', auth()->user()->id)->get();
-        return $deposit;
+        return view('user.deposit.index',compact('deposit'));
     }
 
 
@@ -26,7 +26,7 @@ class UserDepositController extends Controller
             'amount' => 'required',
             'total' => 'required',
             'trx' => 'required',
-            'image' => 'required',
+            'image' => 'required|image',
         ]);
 
         $image = $validated['image'];
@@ -40,6 +40,6 @@ class UserDepositController extends Controller
         $deposit->trx = $validated['trx'];
         $deposit->image = $imageName;
         $deposit->save();
-        return redirect()->back()->with('success', 'Request submited successfully');
+        return redirect()->route('User.All.Deposits')->with('success', 'Request submited successfully');
     }
 }

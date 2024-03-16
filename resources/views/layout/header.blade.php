@@ -11,16 +11,12 @@
 
     <!-- PAGE TITLE HERE -->
     <title>{{ env('APP_NAME') }} - User Dashboard</title>
-
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('asset/images/favicon.png') }}">
-
     {{-- links --}}
     @yield('links')
 
     <link href="{{ asset('asset/vendor/jquery-nice-select/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('asset/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}"
-        rel="stylesheet">
     <link href="{{ asset('asset/vendor/jquery-autocomplete/jquery-ui.css') }}" rel="stylesheet">
     <!-- Style css -->
     <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
@@ -136,11 +132,12 @@
                             <a class="nav-link user-profile" href="javascript:void(0);" role="button"
                                 data-bs-toggle="dropdown">
                                 <div class="header-info2 d-flex align-items-center">
-                                    <img src="{{ asset('asset/images/profile/profile.png') }}" alt="">
+                                    <img src="{{ asset('profile/' . auth()->user()->pic) }}" alt="">
                                     <div class="d-flex align-items-center sidebar-info">
                                         <div class="user-info">
-                                            <span class="font-w500 d-block  fs-5 text-white">Adam Joe</span>
-                                            <small class="text-end font-w400">Admin</small>
+                                            <span
+                                                class="font-w500 d-block  fs-5 text-white">{{ auth()->user()->name }}</span>
+                                            <small class="text-end font-w400">{{ auth()->user()->role }}</small>
                                         </div>
                                         <svg width="14" height="8" viewBox="0 0 14 8" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
