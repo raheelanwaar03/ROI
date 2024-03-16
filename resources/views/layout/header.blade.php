@@ -28,10 +28,7 @@
 </head>
 
 <body>
-
-    <!--*******************
-        Preloader start
-    ********************-->
+    <x-alert />
     <div id="preloader">
         <div class="inner">
             <span>{{ env('APP_NAME') }} </span>
@@ -45,7 +42,7 @@
             <span class="circle two"></span>
             <span class="circle three"></span>
             <span class="circle four"></span>
-            <span class="line-1 ">
+            <span class="line-1">
                 <svg width="1920" height="450" viewBox="0 0 1920 450" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path opacity="0.3"
@@ -242,6 +239,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('User.Deposit.Request') }}">Request</a></li>
+                            <li><a href="{{ route('User.All.Deposits') }}">All Requests</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('total');
             $table->string('trx');
             $table->string('image');
-            $table->string('status');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

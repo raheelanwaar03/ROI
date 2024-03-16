@@ -43,8 +43,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('User.Store.Deposit') }}" method="POST"
-                                        enctype="multipart/form-data">
+                                    <form action="{{ route('User.Store.Deposit') }}" enctype="multipart/form-data" method="POST">
                                         @csrf
                                         <div class="container">
                                             <h2 style="text-align: center;">Deposit Amount</h2>
@@ -62,12 +61,13 @@
                                             <div id="paymentDetails" class="hidden">
                                                 <h3>Add Profe</h3>
                                                 <div class="m-2">
-                                                    <input type="text" name="trx" class="form-control"
+                                                    <label for="formID">Transcation ID:</label>
+                                                    <input type="text" name="trx" id="formID" class="form-control"
                                                         placeholder="Transcation ID">
                                                 </div>
                                                 <div class="m-3">
-                                                    <input type="file" name="image" class="form-control"
-                                                        id="fileInput">
+                                                    <label for="formFile" class="form-label">Screen Shot</label>
+                                                    <input class="form-control" type="file" name="image" id="formFile">
                                                 </div>
                                                 <div class="m-2">
                                                     <button id="uploadButton" class="btn btn-primary">Upload</button>
