@@ -12,4 +12,5 @@ Route::name('User.')->prefix('User')->middleware('user', 'auth', 'verified')->gr
     Route::post('/Upload/Profile/Picture', [UserDashboardController::class, 'profile_pic'])->name('Profile.Pic');
     Route::post('/KYC', [KYCController::class, 'kyc'])->name('KYC');
     Route::get('/Deposit/Request', [UserDepositController::class, 'request'])->name('Deposit.Request');
+    Route::post('/Store/Deposit', [UserDepositController::class, 'store'])->name('Store.Deposit');
 });

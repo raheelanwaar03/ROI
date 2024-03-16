@@ -11,4 +11,12 @@ class UserDepositController extends Controller
     {
         return view('user.deposit.request');
     }
+
+    public function store(Request $request)
+    {
+        return $request;
+    }
+
+
+
 }
