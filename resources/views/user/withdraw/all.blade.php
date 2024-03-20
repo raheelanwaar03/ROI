@@ -9,7 +9,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">All Deposit Requests</h4>
+                            <h4 class="card-title">All Withdraw Requests</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -17,31 +17,30 @@
                                     <thead>
                                         <tr>
                                             <th>Amount</th>
-                                            <th>Total</th>
-                                            <th>Transcation ID</th>
+                                            <th>Holder Name</th>
+                                            <th>Account Number</th>
+                                            <th>Type</th>
                                             <th>Status</th>
-                                            <th>Image</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($deposit as $item)
+                                        @foreach ($withdraw as $item)
                                             <tr>
                                                 <td>{{ $item->amount }}</td>
-                                                <td>{{ $item->total }}</td>
-                                                <td>{{ $item->trx }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->account }}</td>
+                                                <td>{{ $item->type }}</td>
                                                 <td>{{ $item->status }}</td>
-                                                <td><img src="{{ asset('images/deposit/'.$item->image) }}" height="60px"
-                                                        class="img-fluid img-responsive" width="60px"></td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <th>Amount</th>
-                                            <th>Total</th>
-                                            <th>Transcation ID</th>
+                                            <th>Holder Name</th>
+                                            <th>Account Number</th>
+                                            <th>Type</th>
                                             <th>Status</th>
-                                            <th>Image</th>
                                         </tr>
                                     </tfoot>
                                 </table>

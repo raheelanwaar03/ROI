@@ -413,60 +413,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="price-box basic">
-                                    <div class="price-title">
-                                        <h3 class="heading-title">After 20 days</h3>
-                                    </div>
-                                    <div class="price-rate">
-                                        <div class="center-align-content">
-                                            <p class="price">200%</p>
-                                            <i class="fas fa-dollar-sign"></i>
-                                        </div>
-                                    </div>
-                                    <div class="service-feature">
-                                        <ul class="service-feature-list">
-                                            <li>
-                                                <p>Minimam Invest : $200</p>
-                                            </li>
-                                            <li>
-                                                <p>Maximam Invest : $2000</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="buy-btn-wrapper">
-                                        <a class="base-btn1" href="#">Deposit<i
-                                                class="fas fa-dollar-sign"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6">
-                                <div class="price-box basic">
-                                    <div class="price-title">
-                                        <h3 class="heading-title">After 30 days</h3>
-                                    </div>
-                                    <div class="price-rate">
-                                        <div class="center-align-content">
-                                            <p class="price">300%</p>
-                                            <i class="fas fa-dollar-sign"></i>
-                                        </div>
-                                    </div>
-                                    <div class="service-feature">
-                                        <ul class="service-feature-list">
-                                            <li>
-                                                <p>Minimam Invest : $300</p>
-                                            </li>
-                                            <li>
-                                                <p>Maximam Invest : $3000</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="buy-btn-wrapper">
-                                        <a class="base-btn1" href="#">Deposit<i
-                                                class="fas fa-dollar-sign"></i></a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                     </div>
