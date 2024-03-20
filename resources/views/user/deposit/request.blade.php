@@ -23,7 +23,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="profile-blog">
-                                        <h4 class="text-white d-inline">Admin Wallet</h4>
+                                        <h4 class="text-white d-inline">Admin Wallet Details</h4>
                                         <img src="{{ asset('asset/images/profile/1.jpg') }}" alt=""
                                             class="img-fluid mt-4 mb-4 w-100 rounded">
                                         <h4 class="text-white">Account Number : <span
@@ -33,6 +33,7 @@
                                         </h4>
                                         <h4 class="text-white">User Name : {{ $wallet->onwer }}</h4>
                                         <h4 class="text-white">Type : {{ $wallet->type }}</h4>
+                                        <h4 class="text-white">Minimum Amount : {{ $wallet->limit }}</h4>
                                         <hr>
                                         <p class="mb-0">Note : {{ $wallet->note }}</p>
                                     </div>
@@ -109,12 +110,13 @@
                         var totalAmount = inputValue + percentage;
                         var resultElement = document.getElementById('result');
                         var totalAmountInput = document.getElementById('totalAmount'); // Hidden input field for total amount
-                        if (!isNaN(inputValue) && inputValue >= 100) {
+                        if (!isNaN(inputValue) && inputValue >= {{ $wallet->limit }}) {
                             resultElement.innerHTML =
                                 `<p>1% of ${inputValue} is ${percentage.toFixed(2)}</p><p>Total Amount: ${totalAmount.toFixed(2)}</p>`;
                             totalAmountInput.value = totalAmount.toFixed(2); // Set the value of hidden input field
                         } else {
-                            resultElement.innerHTML = '<p>Please enter a value greater than or equal to 100</p>';
+                            resultElement.innerHTML =
+                                '<p>Please enter a value greater than or equal to {{ $wallet->limit }}</p>';
                             totalAmountInput.value = ''; // Clear the value if input value is invalid
                         }
                     });

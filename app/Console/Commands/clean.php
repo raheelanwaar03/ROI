@@ -69,6 +69,7 @@ class clean extends Command
         $wallet->type = 'trc';
         $wallet->note = 'user can enter some information here like pay me through binance';
         $wallet->status = '1';
+        $wallet->limit = '120';
         $wallet->save();
 
     }

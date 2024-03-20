@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('number');
             $table->string('onwer');
             $table->string('type');
+            $table->string('limit');
             $table->string('note')->nullable();
             $table->string('status')->default(0);
             $table->timestamps();
