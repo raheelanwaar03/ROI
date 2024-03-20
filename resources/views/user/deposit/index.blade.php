@@ -30,7 +30,7 @@
                                                 <td>{{ $item->total }}</td>
                                                 <td>{{ $item->trx }}</td>
                                                 <td>{{ $item->status }}</td>
-                                                <td><img src="{{ asset('images/'.$deposit->image) }}" height="60px"
+                                                <td><img src="{{ asset('images/deposit/'.$item->image) }}" height="60px"
                                                         class="img-fluid img-responsive" width="60px"></td>
                                             </tr>
                                         @endforeach
