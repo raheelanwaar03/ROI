@@ -11,7 +11,7 @@
                             </div>
                             <div class="profile-info">
                                 <div class="profile-photo">
-                                    <img src="{{ asset('profile/' . auth()->user()->pic) }}" class="img-fluid rounded-circle"
+                                    <img src="{{ asset('images/profile/'.auth()->user()->pic) }}" class="img-fluid rounded-circle"
                                         alt="">
                                 </div>
                                 <div class="profile-details">

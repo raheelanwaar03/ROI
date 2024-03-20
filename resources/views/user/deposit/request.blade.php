@@ -5,6 +5,10 @@
         .hidden {
             display: none;
         }
+
+        .copy-icon {
+            cursor: pointer;
+        }
     </style>
 @endsection
 
@@ -15,15 +19,22 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="row">
-                        <div class="col-xl-4">
+                        <div class="col-xl-8">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="profile-blog">
-                                        <h4 class="text-white d-inline">Today Highlights</h4>
+                                        <h4 class="text-white d-inline">Admin Wallet</h4>
                                         <img src="{{ asset('asset/images/profile/1.jpg') }}" alt=""
                                             class="img-fluid mt-4 mb-4 w-100 rounded">
-                                        <h4 class="text-white">{{ $wallet->name }}</h4>
-                                        <p class="mb-0">{{ $wallet->note }}</p>
+                                        <h4 class="text-white">Account Number : <span
+                                                id="account-number">{{ $wallet->number }}</span>
+                                            <span class="copy-icon btn btn-sm btn-primary"
+                                                onclick="copyToClipboard('account-number')">Copy</span>
+                                        </h4>
+                                        <h4 class="text-white">User Name : {{ $wallet->onwer }}</h4>
+                                        <h4 class="text-white">Type : {{ $wallet->type }}</h4>
+                                        <hr>
+                                        <p class="mb-0">Note : {{ $wallet->note }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -107,5 +118,29 @@
                             totalAmountInput.value = ''; // Clear the value if input value is invalid
                         }
                     });
+                </script>
+                <script>
+                    function copyToClipboard(elementId) {
+                        const el = document.getElementById(elementId); // Get the element containing the account number
+                        const text = el.textContent.trim(); // Get the text content and remove extra whitespace
+
+                        // Create a temporary input element
+                        const tempInput = document.createElement("input");
+                        tempInput.value = text;
+                        document.body.appendChild(tempInput);
+
+                        // Select the text in the input element
+                        tempInput.select();
+                        tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+
+                        // Copy the selected text to the clipboard
+                        document.execCommand("copy");
+
+                        // Remove the temporary input element
+                        document.body.removeChild(tempInput);
+
+                        // Provide some feedback to the user
+                        alert("Account number copied to clipboard: " + text);
+                    }
                 </script>
             @endsection

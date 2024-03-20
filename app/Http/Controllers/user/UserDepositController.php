@@ -33,7 +33,7 @@ class UserDepositController extends Controller
 
         $image = $validated['image'];
         $imageName = rand(111111, 999999) . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
+        $image->move(public_path('images/deposit'), $imageName);
 
         $deposit = new Deposit();
         $deposit->user_id = auth()->user()->id;

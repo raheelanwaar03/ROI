@@ -132,7 +132,7 @@
                             <a class="nav-link user-profile" href="javascript:void(0);" role="button"
                                 data-bs-toggle="dropdown">
                                 <div class="header-info2 d-flex align-items-center">
-                                    <img src="{{ asset('profile/' . auth()->user()->pic) }}" alt="">
+                                    <img src="{{ asset('images/profile/'.auth()->user()->pic) }}" alt="">
                                     <div class="d-flex align-items-center sidebar-info">
                                         <div class="user-info">
                                             <span
