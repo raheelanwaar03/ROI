@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\admin\DepositWallet;
 use App\Models\user\Deposit;
 use Illuminate\Http\Request;
 
@@ -11,13 +12,14 @@ class UserDepositController extends Controller
     public function index()
     {
         $deposit = Deposit::where('user_id', auth()->user()->id)->get();
-        return view('user.deposit.index',compact('deposit'));
+        return view('user.deposit.index', compact('deposit'));
     }
 
 
     public function request()
     {
-        return view('user.deposit.request');
+        $wallet = DepositWallet::where('status', 1)->first();
+        return view('user.deposit.request', compact('wallet'));
     }
 
     public function store(Request $request)

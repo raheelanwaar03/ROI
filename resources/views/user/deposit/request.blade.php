@@ -22,13 +22,8 @@
                                         <h4 class="text-white d-inline">Today Highlights</h4>
                                         <img src="{{ asset('asset/images/profile/1.jpg') }}" alt=""
                                             class="img-fluid mt-4 mb-4 w-100 rounded">
-                                        <h4><a href="post-details.html" class="text-white">Darwin Creative Agency Theme</a>
-                                        </h4>
-                                        <p class="mb-0">A small river named Duden flows by their place and supplies it
-                                            with the necessary
-                                            regelialia. It is a paradisematic country, in which roasted parts of sentences
-                                            fly into your mouth.
-                                        </p>
+                                        <h4 class="text-white">{{ $wallet->name }}</h4>
+                                        <p class="mb-0">{{ $wallet->note }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +38,8 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('User.Store.Deposit') }}" enctype="multipart/form-data" method="POST">
+                                    <form action="{{ route('User.Store.Deposit') }}" enctype="multipart/form-data"
+                                        method="POST">
                                         @csrf
                                         <div class="container">
                                             <h2 style="text-align: center;">Deposit Amount</h2>
@@ -67,7 +63,8 @@
                                                 </div>
                                                 <div class="m-3">
                                                     <label for="formFile" class="form-label">Screen Shot</label>
-                                                    <input class="form-control" type="file" name="image" id="formFile">
+                                                    <input class="form-control" type="file" name="image"
+                                                        id="formFile">
                                                 </div>
                                                 <div class="m-2">
                                                     <button id="uploadButton" class="btn btn-primary">Upload</button>

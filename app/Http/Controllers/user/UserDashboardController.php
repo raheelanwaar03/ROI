@@ -17,12 +17,12 @@ class UserDashboardController extends Controller
     {
         $image = $request->pic;
         $imageName = rand(11111, 999999) . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('profile'), $imageName);
+        $image->move(public_path('images/profile'), $imageName);
 
         $user = User::where('id', auth()->user()->id)->first();
 
-        if (file_exists(public_path('profile/', auth()->user()->pic))) {
-            file_exists(public_path('profile/', auth()->user()->pic));
+        if (file_exists(public_path('images/profile', auth()->user()->pic))) {
+            file_exists(public_path('images/profile', auth()->user()->pic));
         }
 
         $user->pic = $imageName;

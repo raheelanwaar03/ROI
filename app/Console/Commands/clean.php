@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Models\admin\DepositWallet;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
@@ -59,5 +60,16 @@ class clean extends Command
         $user->status = 'approved';
         $user->register_id = '123456';
         $user->save();
+
+        // adding wallet
+
+        $wallet = new DepositWallet();
+        $wallet->number = 'asdfasvsvqerrfavafq390e5ruavjasd89f67u';
+        $wallet->onwer = 'skindar';
+        $wallet->type = 'trc';
+        $wallet->note = 'user can enter some information here like pay me through binance';
+        $wallet->status = '1';
+        $wallet->save();
+
     }
 }
